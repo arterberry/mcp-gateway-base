@@ -1,0 +1,17 @@
+gateway:
+  name: "mcp-gateway"
+  version: "1.0.0"
+  environment: "kubernetes"
+
+kubernetes:
+  namespace: "mcp-services"
+  label_selector: "mcp-server=enabled"
+  poll_interval: "30s"
+  in_cluster: true
+
+transport:
+  mode: "http"
+  addr: ":8081"
+
+health:
+  port: 8086
